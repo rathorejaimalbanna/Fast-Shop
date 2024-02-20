@@ -1,0 +1,120 @@
+body{
+    font-family: sans-serif;
+    width: 100vw;
+    overflow-x: hidden;
+}
+.container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+.navbar{
+    box-shadow: 0 2px 8px 0 rgba(178, 177, 177, 0.997);
+    margin-bottom: 5px;
+}
+.searchBar{
+    width: 100vw;
+    height: auto;
+}
+.asideLineItem{
+    display: block;
+    font-size: 1.2rem;
+    list-style: none;
+    text-underline-position: below;
+    color: rgb(69, 122, 228);
+}
+.contentDiv{
+    display: flex;
+    width: 100%;
+}
+.aside{
+    display: flex;
+    flex-direction: column;
+    position:sticky;
+    width: 15%;
+    max-height: 100vh;
+    align-self: stretch;
+    padding: 3%;
+    box-sizing: border-box;
+    box-shadow: 3.5px 0px 3px 4px rgb(88, 144, 234);
+    margin-right: 3%;
+    top:2px;
+}
+.products{
+    display: flex;
+    width: 80%;
+    height: auto;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-top: 3%;
+}
+.icons{
+    width: 20px;
+    height: 20px;
+}
+.fastIcons{
+    width: 40px;
+    height: 40px;
+}
+
+/* SignIN page */
+.signIn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 7%;
+}
+.link{
+    text-decoration: none;
+    color:gray
+}
+.formDiv{
+    height: auto;
+    width: 30%;
+    min-width:250px;
+    background-color: #fff;
+    box-shadow: 0 40px 80px -40px #000;
+    border-radius: 14px;
+    padding-top: 1%;
+    min-height: 250px;
+    color:#000;
+  }
+  .formInput{
+    width: 80%;
+    height: 30px;
+    border-radius: 15px;
+    margin: 10px 0px;
+    padding-left: 15px;
+    outline: none;
+    border: .5px solid gray;
+    margin-left: 10%;
+  }
+  .form{
+    padding: 10px;
+    padding-top: 20px;
+  }
+  .submitButton{
+  background-color:rgb(238,116,30);
+  border:none;
+  border-radius:3px;
+  margin-top:5%;
+  width: 80%;
+  height: 30px;
+  margin-left: 10%;
+  color:#fff;
+  margin-bottom: 30px;
+}
+.cartHeader{
+    text-align: center;
+    color: rgb(255,183,79);
+    margin-top: 10%;
+}
+.cartDiv{
+    display: flex;
+    flex-wrap: wrap;
+    width: 80vw;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+}
