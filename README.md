@@ -1,8 +1,9 @@
 Fast Shop Web Application
-Description
+
+Description:
 Fast Shop is a web application that allows users to browse and shop for various products online. Users can sign up, log in, view products, add them to their cart, and check out. The application provides a user-friendly interface for an enjoyable shopping experience.
 
-Features
+Features:
 User Authentication: Users can sign up for an account or log in using their credentials.
 
 
