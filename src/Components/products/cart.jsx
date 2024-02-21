@@ -26,10 +26,11 @@ export default function Cart() {
       }
     }
     // Fetch cart items if userData is available
-    if (userData.length > 0) {
+    
       getCartItem();
-    }
-  }, [userData]);
+      console.log(fetchedCart)
+    
+  }, [userData,fetchedCart]);
 
   // Render a message if user is not logged in
   if (userData.length === 0) {
@@ -46,7 +47,7 @@ export default function Cart() {
     <div className={styles.cartDiv}>
       {/* Render cart items or a message if cart is empty */}
       {fetchedCart.length > 0 ? (
-        fetchedCart.map((item, id) => <ProductCard item={item} key={id} />)
+        fetchedCart.map((item, id) => <ProductCard item={item} key={id} type="cart"/>)
       ) : (
         <h2 className={styles.noItem}>No item in your cart</h2>
       )}

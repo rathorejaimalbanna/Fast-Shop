@@ -11,7 +11,8 @@ export default function Product() {
   const [docs, setDocs] = useState([]);
   // Retrieve userData and filter from context
   const { userData } = UseValue();
-  const { filter } = UseValue();
+  const { filter,setFilter } = UseValue();
+  useEffect(()=>{setFilter([])},[setFilter])
 
   useEffect(() => {
     // Function to fetch product data
@@ -35,7 +36,7 @@ export default function Product() {
     }
     // Fetch product data
     fetchDdata();
-  }, [filter]);
+  }, [filter,docs]);
 
   // Function to add item to cart
   function addCart(name, image) { 
