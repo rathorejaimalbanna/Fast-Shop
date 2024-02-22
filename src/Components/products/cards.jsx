@@ -1,17 +1,15 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import UseValue from '../../contextApi';
+import { db } from '../../firebase';
+import {doc, deleteDoc} from 'firebase/firestore'
 
 // ProductCard component renders a card displaying product information
 function ProductCard(props) {
   // Retrieve userData from context
   const { userData } = UseValue();
 
-  // Function to display a toast notification
-  const notify = (msg) => toast.success(msg);
 
   // Function to add item to cart
   function addItem() { 
@@ -19,16 +17,19 @@ function ProductCard(props) {
     if (userData.length === 0) {
       alert('Login First !!');
     } else {
-      // Call addCart function and display notification
+      // Call addCart function
       props.addCart(props.item.name, props.item.image);
-      notify("Item added to cart");
     }
   };
 
   // Function to remove item from cart (placeholder)
   function removeItem() {
     // Display notification
-    notify("Item removed from cart");
+    console.log("item removed")
+    async function remove()
+    {
+    await deleteDoc(doc(db, "cartData", userData.username, "product", props.item.name));}
+    remove()
   }
 
   return (
@@ -47,7 +48,6 @@ function ProductCard(props) {
           {props.type === "cart" ? "Remove from cart" : "Add To Cart"}
         </Button>
         {/* Render toast container for notifications */}
-        <ToastContainer />
       </Card.Body>
     </Card>
   );

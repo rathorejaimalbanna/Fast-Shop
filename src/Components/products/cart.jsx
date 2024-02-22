@@ -11,7 +11,7 @@ export default function Cart() {
   const { userData } = UseValue();
   // State to store fetched cart items
   const [fetchedCart, setFetchedCart] = useState([]);
-
+  
   useEffect(() => {
     // Function to fetch cart items
     async function getCartItem() {
@@ -28,9 +28,8 @@ export default function Cart() {
     // Fetch cart items if userData is available
     
       getCartItem();
-      console.log(fetchedCart)
     
-  }, [userData,fetchedCart]);
+  }, [userData]);
 
   // Render a message if user is not logged in
   if (userData.length === 0) {
