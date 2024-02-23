@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import ProductCard from "./cards";
 import UseValue from "../../contextApi";
 import styles from "../../app.module.css";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, deleteDoc, doc } from "firebase/firestore";
 import { db } from "../../firebase";
 
 // Cart component renders the user's cart items
@@ -30,6 +30,13 @@ export default function Cart() {
       getCartItem();
     
   }, [userData]);
+  async function remove(name,)
+  {
+  await deleteDoc(doc(db, "cartData", userData.username, "product", name));
+  const  newCart = fetchedCart.filter((item)=> item.name!==name);
+  setFetchedCart(newCart);
+};
+
 
   // Render a message if user is not logged in
   if (userData.length === 0) {
@@ -46,7 +53,7 @@ export default function Cart() {
     <div className={styles.cartDiv}>
       {/* Render cart items or a message if cart is empty */}
       {fetchedCart.length > 0 ? (
-        fetchedCart.map((item, id) => <ProductCard item={item} key={id} type="cart"/>)
+        fetchedCart.map((item, id) => <ProductCard item={item} key={id} type="cart" remove={remove}/>)
       ) : (
         <h2 className={styles.noItem}>No item in your cart</h2>
       )}
