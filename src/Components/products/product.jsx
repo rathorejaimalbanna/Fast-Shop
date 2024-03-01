@@ -5,6 +5,7 @@ import { collection, getDocs } from "firebase/firestore";
 import { doc, setDoc } from "firebase/firestore";
 import UseValue from '../../contextApi';
 
+
 // Product component fetches and renders product data
 export default function Product() {
   // State to store fetched product data
@@ -39,11 +40,11 @@ export default function Product() {
   }, [filter,docs]);
 
   // Function to add item to cart
-  function addCart(name, image) { 
+  function addCart(name, image, price) { 
     async function addItem() {
       // Add item to cartData collection in Firestore
       await setDoc(doc(db, "cartData", userData.username, "product", name), {
-        name, image
+        name, image, price
       });
     }
     // Call addItem function

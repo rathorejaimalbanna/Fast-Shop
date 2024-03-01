@@ -125,3 +125,17 @@ body{
     margin-top: 200px;
     margin-left: 200px;
 }
+.orderButton{
+    text-align: center;
+    height: 40px;
+    width: 20%;
+    background-color: rgb(255,154,0);
+    color: #fff;
+    outline: none;
+    border: none;
+}
+.orderDiv{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}

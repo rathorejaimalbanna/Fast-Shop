@@ -5,6 +5,7 @@ import Header from './Components/Navbar';
 import SignIn from './Components/signIn';
 import LogIn from './Components/login';
 import Cart from './Components/products/cart';
+import Orders from './Components/Orders';
 
 // App component responsible for routing and rendering different pages
 export default function App() {
@@ -17,7 +18,8 @@ export default function App() {
         { index: true, element: <Home /> },
         { path: 'signin', element: <SignIn /> },
         { path: 'login', element: <LogIn /> },
-        { path: 'cart', element: <Cart /> }
+        { path: 'cart', element: <Cart /> },
+        { path: 'myOrders', element: <Orders /> }
       ]
     }
   ]);
