@@ -2,18 +2,20 @@ import React from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, Link, useNavigate } from "react-router-dom";
 import UseValue from "../contextApi";
 import styles from "../app.module.css";
 
 // Header component renders the navigation bar
 function Header() {
+  const navigate = useNavigate()
   // Retrieve userData and setUserData function from context
   const { userData, setUserData } = UseValue();
 
   // Function to handle logout
   function handleLogOut() {
     setUserData([]);
+    navigate("/login")
   }
 
   return (
