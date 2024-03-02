@@ -20,7 +20,7 @@ export default function Home() {
         </div>
         {/* Render products section */}
         <div className={styles.products}>
-          {/* <Product /> */}
+          <Product />
         </div>
       </div>
     </div>

@@ -45,16 +45,18 @@ export default function Cart() {
 
 async function orderNow() {
   try {
-    let totalPrice = 0;
-    fetchedCart.forEach(item => {
-      totalPrice += Number(item.price);
-    });
+    const d = new Date();
+    const day = d.getDate();
+    const month = d.getMonth();
+    const year = d.getFullYear();
+    const date = String(day) + "-" + String(month) + "-" + String(year);
+    const totalPrice = 0
+    fetchedCart.forEach((item)=> {totalPrice += item.price})
 
     // Create a new order document in the database
-    const orderRef = doc(db, "orders", userData.username);
+    const orderRef = doc(db, "orders", userData.username,"orderDetails",date);
     await setDoc(orderRef, {
-      items: fetchedCart,
-      totalPrice: totalPrice
+      items: fetchedCart,date,totalPrice
     });
 
     async function deleteCartItems(name){

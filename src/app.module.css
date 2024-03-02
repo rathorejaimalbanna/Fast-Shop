@@ -122,8 +122,8 @@ body{
     color: #000;
     text-align: center;
     font-weight: 600;
-    margin-top: 200px;
-    margin-left: 200px;
+    margin-top: 20%;
+    margin-left: 25%;
 }
 .orderButton{
     text-align: center;
@@ -138,4 +138,36 @@ body{
     display: flex;
     justify-content: center;
     margin-bottom: 50px;
+}
+.orders{
+    display: flex;
+    height: auto;
+    width: 100vw;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 30px;
+}
+.orderTable{
+    padding: 2% 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(247,247,247);
+    width: 50%;
+    height: auto;
+    text-align:center;
+    margin-top:2rem
+}
+th{
+    border-bottom: 2px solid ;
+    padding-bottom: 5px;
+}
+.td, td{
+    border:2px solid #fff !important;
+}
+
+.table{
+    width: 90%;
+    margin-top: 35px;
 }

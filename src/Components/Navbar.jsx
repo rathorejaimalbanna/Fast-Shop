@@ -57,7 +57,7 @@ function Header() {
                     style={{
                       display: "flex",
                       justifyContent: "space-evenly",
-                      width: "35%",
+                      width: "40%",
                     }}
                   >
                     {/* Render home link */}
@@ -78,6 +78,14 @@ function Header() {
                       />{" "}
                       Cart
                     </Link>
+                    {userData.length !== 0 &&<Link to="/myOrders" className={styles.link}>
+                      <img
+                        src="./images/order.png"
+                        alt=""
+                        className={styles.icons}
+                      />{" "}
+                      MyOrders
+                    </Link>}
                     {/* Render login or user link */}
                     {userData.length !== 0 ? (
                       <Link to="/" className={styles.link}>
