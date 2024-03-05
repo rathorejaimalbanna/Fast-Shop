@@ -4,6 +4,7 @@ import Card from 'react-bootstrap/Card';
 import UseValue from '../../contextApi';
 import {toast} from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css';
+import styles from "../../app.module.css";
 
 // ProductCard component renders a card displaying product information
 function ProductCard(props) {
@@ -26,21 +27,21 @@ function ProductCard(props) {
 
 
   return (
-    <Card style={{ width: '18rem', margin: '3%' }}>
+    <Card className={styles.cardsDiv}>
       {/* Render product image */}
-      <Card.Img variant="top" src={props.item.image} style={{ maxHeight: '250px', maxWidth: '100%' }} />
+      <Card.Img variant="top" src={props.item.image} className={styles.cardImage} />
       <Card.Body>
         {/* Render product name */}
-        <Card.Title>{props.item.name}</Card.Title>
+        <Card.Title className={styles.cardTextTitle}>{props.item.name}</Card.Title>
         {/* Render product description (placeholder) */}
-        <Card.Text>
+        <Card.Text className={styles.cardText}>
           Perfect buy for you
         </Card.Text>
-        <Card.Text>
+        <Card.Text className={styles.cardText}>
         &#8377; {props.item.price}
         </Card.Text>
         {/* Render button for adding/removing from cart */}
-        <Button variant="primary" onClick={props.type === "cart" ? ()=>{props.remove(props.item.name)} : ()=>{addItem()}}>
+        <Button className={styles.cardButton} variant="primary" onClick={props.type === "cart" ? ()=>{props.remove(props.item.name)} : ()=>{addItem()}}>
           {props.type === "cart" ? "Remove from cart" : "Add To Cart"}
         </Button>
       </Card.Body>

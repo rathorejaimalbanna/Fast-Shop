@@ -49,18 +49,10 @@ function Header() {
                   <input
                     type="text"
                     placeholder="Search"
-                    style={{
-                      borderRadius: "5px",
-                      width: "50%",
-                      paddingLeft: "5px",
-                    }}
+                    className={styles.search}
                   />
                   <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "space-evenly",
-                      width: "40%",
-                    }}
+                    className={styles.iconsDiv}
                   >
                     {/* Render home link */}
                     <Link to="/" className={styles.link}>

@@ -6,7 +6,7 @@ import UseValue from '../../contextApi';
 // Aside component responsible for rendering filter options
 export default function Aside() {
   // Retrieve filter state and setter function from context
-  var { filter, setFilter } = UseValue();
+  var { filter, setFilter, setDependency,dependency } = UseValue();
 
   // Function to handle checkbox change
   function handleChange(type) {
@@ -20,10 +20,11 @@ export default function Aside() {
       filter.push(type);
       setFilter(filter);
     }
+    setDependency(!dependency)
   }
 
   return (
-    <div>
+    <div className={styles.asideSection}>
       {/* Render filter options */}
       <h3 style={{ marginLeft: '15%', marginBottom: '15%' }}>Filter</h3>
       <ul>

@@ -12,11 +12,13 @@ export default function UseValue() {
 // CustomProvider component provides the context value to its children
 export function CustomProvider({ children }) {
     // State to store filter and user data
+    const [dependency,setDependency] = useState(false)
     const [filter, setFilter] = useState([]);
     const [userData, setUserData] = useState([]);
 
+
     return (
-        <itemContext.Provider value={{ filter, setFilter, userData, setUserData }}>
+        <itemContext.Provider value={{ filter, setFilter, userData, setUserData,dependency,setDependency }}>
             {children}
         </itemContext.Provider>
     );

@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import ProductCard from './cards';
 import { db } from '../../firebase';
-import { collection, getDocs } from "firebase/firestore";
 import { doc, setDoc } from "firebase/firestore";
 import UseValue from '../../contextApi';
+import { data } from '../../productData';
+import styles from '../../app.module.css'
 
 
 // Product component fetches and renders product data
@@ -12,32 +13,20 @@ export default function Product() {
   const [docs, setDocs] = useState([]);
   // Retrieve userData and filter from context
   const { userData } = UseValue();
-  const { filter,setFilter } = UseValue();
+  const { filter,setFilter,dependency } = UseValue();
   useEffect(()=>{setFilter([])},[setFilter])
 
   useEffect(() => {
-    // Function to fetch product data
-    async function fetchDdata() {
-      try {
-        const q = collection(db, "productsData");
-        const querySnapshot = await getDocs(q);
-        const fetchedDocs = querySnapshot.docs.map((doc) => doc.data());
-
-        let finalData = fetchedDocs;
+        let fetchedDocs = data
+        console.log(filter)
         // Filter product data based on filter
         if (filter.length > 0) {
-          finalData = fetchedDocs.filter((item) => filter.includes(item.category));
+          fetchedDocs = fetchedDocs.filter((item) => filter.includes(item.category));
         }
-
         // Update state with filtered product data
-        setDocs(finalData);
-      } catch (error) {
-        console.log("Error occurred:", error);
-      }
-    }
-    // Fetch product data
-    fetchDdata();
-  }, [filter,docs]);
+        setDocs(fetchedDocs);
+
+  }, [filter,dependency]);
 
   // Function to add item to cart
   function addCart(name, image, price) { 
@@ -59,9 +48,11 @@ export default function Product() {
   return (
     <>
       {/* Render ProductCard for each product */}
+      <div className={styles.outerCardDiv}>
       {docs.map((item, id) => 
         <ProductCard key={id} item={item} addCart={addCart} type="product"/>
       )}
+      </div>
     </>
   );
 }

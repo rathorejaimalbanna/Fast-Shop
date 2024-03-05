@@ -13,6 +13,16 @@ body{
     box-shadow: 0 2px 8px 0 rgba(178, 177, 177, 0.997);
     margin-bottom: 5px;
 }
+.search{
+    border-radius: 5px;
+    width: 50%;
+    padding-left: "5px"
+}
+.iconsDiv{
+    display:flex;
+    justify-content: space-evenly;
+    width: 40%
+}
 .searchBar{
     width: 100vw;
     height: auto;
@@ -57,7 +67,14 @@ body{
     width: 40px;
     height: 40px;
 }
-
+.cardsDiv{
+     width:18rem;
+      margin: 3%
+}
+.cardImage{
+    max-height:250px;
+     max-width:100%
+}
 /* SignIN page */
 .signIn{
     display: flex;
@@ -170,4 +187,78 @@ th{
 .table{
     width: 90%;
     margin-top: 35px;
+}
+
+
+
+/* media quiries  */
+
+@media screen and (max-width:700px) {
+    .search{
+        display: none;
+    }
+    .iconsDiv{
+        width: 100vw;
+        font-size: small;
+        flex-direction: column;
+        margin-top: 5px;
+    }
+    .link{
+        margin-top: 8px;
+    }
+    .icons{
+        width: 20px;
+        height: 20px;
+    }
+    .aside{
+        display: none;
+    }
+    .products{
+        width: 100%;
+        font-size: smaller;
+    }
+    .cardsDiv{
+        width: 40%;
+        height: auto;
+        margin: 5%;
+    }
+    .cardImage{
+        width: 80px;
+        height: 100px;
+        margin-left: 15%;
+    }
+    .carouselImg{
+        height: 150px !important;
+        width: 100vw !important;
+    }
+    .outerCardDiv{
+        display: flex;
+        width: 100vw;
+        height: auto;
+        padding: 0;
+        flex-wrap: wrap;
+    }
+    .cardText{
+        font-size: x-small;
+        margin-top: -8px !important;
+    }
+    .cardTextTitle{
+        font-size: small !important;
+        margin-top: 5px !important;
+        font-weight: 500px;
+    }
+    .cardButton{
+        font-size: xx-small;
+        margin-top: -10px;
+    }
+    .cartDiv{
+        display: flex;
+        width: 100vw;
+    }
+    .orderButton{
+        width: 60vw;
+    }
+    .orderTable{
+        width: 90vw;
+    }
 }

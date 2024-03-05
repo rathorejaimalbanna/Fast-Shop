@@ -15,23 +15,23 @@ function ControlledCarousel() {
   return (
     <Carousel activeIndex={index} onSelect={handleSelect}>
       {/* Render carousel items */}
-      <Carousel.Item>
+      <Carousel.Item >
         {/* Render ExampleCarouselImage with specified image URL */}
         <ExampleCarouselImage text="https://rukminim2.flixcart.com/fk-p-flap/1600/270/image/67b53826ce8284e0.jpeg?q=20" />
         <Carousel.Caption>
           {/* Optional caption */}
         </Carousel.Caption>
       </Carousel.Item>
-      <Carousel.Item>
+      <Carousel.Item >
         {/* Render ExampleCarouselImage with specified image URL */}
-        <ExampleCarouselImage text="https://rukminim2.flixcart.com/fk-p-flap/1600/270/image/0f9ecd9ce4f86cfa.jpg?q=20" />
+        <ExampleCarouselImage  text="https://rukminim2.flixcart.com/fk-p-flap/1600/270/image/0f9ecd9ce4f86cfa.jpg?q=20" />
         <Carousel.Caption>
           {/* Optional caption */}
         </Carousel.Caption>
       </Carousel.Item>
-      <Carousel.Item>
+      <Carousel.Item >
         {/* Render ExampleCarouselImage with specified image URL */}
-        <ExampleCarouselImage text="https://rukminim2.flixcart.com/fk-p-flap/1600/270/image/0944d5fb3c43e1de.jpeg?q=20" />
+        <ExampleCarouselImage  text="https://rukminim2.flixcart.com/fk-p-flap/1600/270/image/0944d5fb3c43e1de.jpeg?q=20" />
         <Carousel.Caption>
           {/* Optional caption */}
         </Carousel.Caption>
