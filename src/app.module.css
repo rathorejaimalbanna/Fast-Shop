@@ -188,6 +188,11 @@ th{
     width: 90%;
     margin-top: 35px;
 }
+.outerCardDiv{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
 
 
 
