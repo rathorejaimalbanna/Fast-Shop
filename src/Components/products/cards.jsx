@@ -29,7 +29,7 @@ function ProductCard(props) {
   return (
     <Card className={styles.cardsDiv}>
       {/* Render product image */}
-      <Card.Img variant="top" src={props.item.image} className={styles.cardImage} />
+      <Card.Img variant="top" src={props.item.image} className={styles.cardImage} alt='product image'/>
       <Card.Body>
         {/* Render product name */}
         <Card.Title className={styles.cardTextTitle}>{props.item.name}</Card.Title>

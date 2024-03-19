@@ -45,11 +45,7 @@ export default function Cart() {
 
 async function orderNow() {
   try {
-    const d = new Date();
-    const day = d.getDate();
-    const month = d.getMonth();
-    const year = d.getFullYear();
-    const date = String(day) + "-" + String(month) + "-" + String(year);
+    const date = new Date().toDateString();
     var totalPrice = 0
     fetchedCart.forEach((item)=> {totalPrice += item.price})
     const id = date + String(Math.random())
