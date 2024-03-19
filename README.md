@@ -1,6 +1,11 @@
 Fast Shop Web Application
 
+Hosted Link:
+
+https://fastshop-34554.web.app/
+
 Description:
+
 Fast Shop is a web application that allows users to browse and shop for various products online. Users can sign up, log in, view products, add them to their cart, and check out. The application provides a user-friendly interface for an enjoyable shopping experience.
 
 Features:
